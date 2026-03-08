@@ -75,3 +75,5 @@ scripts/
 .env.local
 Library/
 Snippets/
+
+mongo-keyfile

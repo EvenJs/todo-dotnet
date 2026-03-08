@@ -1,3 +1,5 @@
+using FluentValidation.AspNetCore;
+using TodoApi.Application.Services;
 using TodoApi.API.Middleware;
 using TodoApi.Application.Extensions;
 using TodoApi.Infrastructure.Extensions;
@@ -5,7 +7,9 @@ using TodoApi.Infrastructure.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // ── Services ──────────────────────────────────────────
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv =>
+        fv.RegisterValidatorsFromAssemblyContaining<TodoService>());
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
