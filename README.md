@@ -247,47 +247,47 @@ volumes:
 
 ### Phase 3 — Docker 设置
 
-- [ ] 写 docker-compose.yml
-- [ ] 设定 MongoDB 环境变量
-- [ ] 启动并验证 MongoDB container
+- [x] 写 docker-compose.yml
+- [x] 设定 MongoDB 环境变量
+- [x] 启动并验证 MongoDB container
 
 ### Phase 4 — Domain 层
 
-- [ ] 建立 BaseEntity
-- [ ] 建立 TodoItem model
-- [ ] 建立 TodoTag model
-- [ ] 建立 AppException
-- [ ] 建立 IBaseRepository
-- [ ] 建立 ITodoRepository
-- [ ] 建立 ITagRepository
-- [ ] 建立 IUnitOfWork
+- [x] 建立 BaseEntity
+- [x] 建立 TodoItem model
+- [x] 建立 TodoTag model
+- [x] 建立 AppException
+- [x] 建立 IBaseRepository
+- [x] 建立 ITodoRepository
+- [x] 建立 ITagRepository
+- [x] 建立 IUnitOfWork
 
 ### Phase 5 — Infrastructure 层
 
-- [ ] 建立 MongoDbSettings
-- [ ] 建立 MongoDbContext
-- [ ] 实作 BaseRepository
-- [ ] 实作 TodoRepository
-- [ ] 实作 TagRepository
-- [ ] 实作 UnitOfWork
-- [ ] 建立 InfrastructureServiceExtensions
+- [x] 建立 MongoDbSettings
+- [x] 建立 MongoDbContext
+- [x] 实作 BaseRepository
+- [x] 实作 TodoRepository
+- [x] 实作 TagRepository
+- [x] 实作 UnitOfWork
+- [x] 建立 InfrastructureServiceExtensions
 
 ### Phase 6 — Application 层
 
-- [ ] 建立 TodoResponseDto
-- [ ] 建立 CreateTodoDto + Validator
-- [ ] 建立 UpdateTodoDto + Validator
-- [ ] 建立 ITodoService
-- [ ] 实作 TodoService
-- [ ] 建立 ApplicationServiceExtensions
+- [x] 建立 TodoResponseDto
+- [x] 建立 CreateTodoDto + Validator
+- [x] 建立 UpdateTodoDto + Validator
+- [x] 建立 ITodoService
+- [x] 实作 TodoService
+- [x] 建立 ApplicationServiceExtensions
 
 ### Phase 7 — API 层
 
-- [ ] 建立 ApiResponse
-- [ ] 建立 ApiErrorResponse
-- [ ] 建立 ExceptionMiddleware
-- [ ] 建立 TodoController
-- [ ] 配置 Program.cs
+- [x] 建立 ApiResponse
+- [x] 建立 ApiErrorResponse
+- [x] 建立 ExceptionMiddleware
+- [x] 建立 TodoController
+- [x] 配置 Program.cs
 
 ### Phase 8 — 测试验证
 
