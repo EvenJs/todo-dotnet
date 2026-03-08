@@ -302,3 +302,9 @@ volumes:
 - [ ] 写 Dockerfile
 - [ ] 更新 docker-compose.yml
 - [ ] 测试容器化环境
+
+### Phase 10 — Refactor
+
+- [ ] 安装 Mapster
+- [ ] 建立 MappingConfig
+- [ ] 用 Adapt<T>() 替换所有手动映射
