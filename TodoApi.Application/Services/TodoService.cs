@@ -1,3 +1,4 @@
+using Mapster;
 using TodoApi.Application.DTOs;
 using TodoApi.Application.Interfaces;
 using TodoApi.Domain.Entities;
@@ -25,14 +26,14 @@ public class TodoService : ITodoService
   public async Task<IEnumerable<TodoResponseDto>> GetAllAsync()
   {
     var todos = await _todoRepository.GetAllAsync();
-    return todos.Select(MapToDto);
+    return todos.Adapt<IEnumerable<TodoResponseDto>>();
   }
 
   public async Task<TodoResponseDto> GetByIdAsync(string id)
   {
     var todo = await _todoRepository.GetByIdAsync(id) ?? throw AppException.NotFound($"Todo with ID '{id}' was not found.");
 
-    return MapToDto(todo);
+    return todo.Adapt<TodoResponseDto>();
   }
 
   public async Task<TodoResponseDto> CreateAsync(CreateTodoDto dto)
@@ -58,7 +59,7 @@ public class TodoService : ITodoService
       throw;
     }
 
-    return MapToDto(todo);
+    return todo.Adapt<TodoResponseDto>();
   }
 
   public async Task<TodoResponseDto> UpdateAsync(string id, UpdateTodoDto dto)
@@ -72,7 +73,7 @@ public class TodoService : ITodoService
 
     await _todoRepository.UpdateAsync(id, todo);
     
-    return MapToDto(todo);
+    return todo.Adapt<TodoResponseDto>();
   }
 
   public async Task DeleteAsync(string id)
@@ -92,15 +93,4 @@ public class TodoService : ITodoService
       throw;
     }
   }
-
-  private static TodoResponseDto MapToDto(TodoItem todo) => new()
-  {
-    Id = todo.Id,
-    Title = todo.Title,
-    Description = todo.Description,
-    isCompleted = todo.IsCompleted,
-    Tag = todo.Tag,
-    CreateAt = todo.CreatedAt,
-    updateAt = todo.UpdatedAt
-  };
 }
